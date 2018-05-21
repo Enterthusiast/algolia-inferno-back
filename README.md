@@ -21,10 +21,28 @@ There's no need for a UI on top of the REST API. If you still feel like doing it
 To get started, you'll need the [Serverless Framework](https://serverless.com/framework/docs/providers/aws/guide/quick-start/) installed.
 You'll also need your environment configured with [AWS credentials](https://serverless.com/framework/docs/providers/aws/guide/credentials/).
 
+You'll also need typescript.
+
+````
+npm install -g typescript
+````
+
 ### Install
 
 ````
 npm install
+````
+
+### Build
+
+Build
+````
+tsc -p tsconfig.json
+````
+
+Or watch
+````
+tsc -w -p tsconfig.json
 ````
 
 ### Local development

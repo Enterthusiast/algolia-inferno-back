@@ -1,0 +1,5 @@
+module.exports = {
+    applicationID: '**********',
+    apiKey: '********************************',
+    indexName: 'your_index_name'
+}

@@ -1,30 +1,46 @@
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+const homeView = require('./view/homeView');
+const appModel = require('./model/appModel');
 const serverless = require('serverless-http');
-const express = require('express')
-const app = express()
-
+const bodyParser = require('body-parser');
+const express = require('express');
+const app = express();
+// For parsing application/json
+app.use(bodyParser.json());
 // Welcome route
 app.get('/', function (req, res) {
-    res.send(`
-        Welcome to the live algolia-inferno-back project
-        <p>
-            POST /api/1/apps to add an app to the Algolia database
-            <br>
-            DELETE /api/1/apps/:id to remove an app from the Algolia database
-        </p>
-        <p>
-            The front of this project is accessible here : 'coming soon'
-        </p>
-    `)
-})
-
+    res.send(homeView());
+});
 // Add app
 app.post('/api/1/apps', function (req, res) {
-        res.send('Adding something?')
-    })
-
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const response = yield appModel.add(req.body);
+            res.json(response);
+        }
+        catch (error) {
+            res.status(400).json(error);
+        }
+    });
+});
 // Remove app
 app.delete('/api/1/apps/:id', function (req, res) {
-        res.send(`Removing something? Id: ${req.params.id}`)
-    })
-
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const response = yield appModel.remove(req.params.id);
+            res.json(response);
+        }
+        catch (error) {
+            res.status(400).json(error);
+        }
+    });
+});
 module.exports.handler = serverless(app);
+//# sourceMappingURL=index.js.map
