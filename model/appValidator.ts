@@ -5,7 +5,7 @@ module.exports = {
 
     add: [
         check('name').not().isEmpty().withMessage('is required').isString().withMessage('must be a string'),
-        check('image').isString().isURL().withMessage('must be an URL'),
+        check('image').optional().isString().isURL().withMessage('must be an URL'),
         check('link').not().isEmpty().withMessage('is required').isString().isURL().withMessage('must be an URL'),
         check('category').isString().withMessage('must be a string'),
         check('rank').not().isEmpty().withMessage('is required').isInt().withMessage('must be a number'),
@@ -32,5 +32,5 @@ module.exports = {
             }
         }
     ]
-    
+
 }
