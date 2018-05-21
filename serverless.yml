@@ -1,0 +1,21 @@
+service: algolia-inferno-back
+
+custom:
+  serverless-offline:
+    port: 2001
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region: eu-west-3
+
+functions:
+  app:
+    handler: index.handler
+    events:
+      - http: ANY /
+      - http: 'ANY {proxy+}'

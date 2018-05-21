@@ -1,0 +1,27 @@
+{
+  "name": "algolia-inferno-back",
+  "version": "1.0.0",
+  "description": "Build a straightforward MVC framework able to route an HTTP query and send the response.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Enterthusiast/algolia-inferno-back.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Enterthusiast/algolia-inferno-back/issues"
+  },
+  "homepage": "https://github.com/Enterthusiast/algolia-inferno-back#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "serverless-http": "^1.5.5"
+  },
+  "devDependencies": {
+    "serverless-offline": "^3.23.0"
+  }
+}
