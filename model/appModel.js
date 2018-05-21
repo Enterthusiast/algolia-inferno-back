@@ -29,7 +29,6 @@ module.exports = {
         }
     }),
     remove: (id) => __awaiter(this, void 0, void 0, function* () {
-        console.log(id);
         try {
             const response = yield algoliaIndex.deleteObject(id);
             // close connection

@@ -6,12 +6,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-const homeView = require('./view/homeView');
-const appModel = require('./model/appModel');
 const serverless = require('serverless-http');
 const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
+const homeView = require('./view/homeView');
+const appModel = require('./model/appModel');
+const appValidator = require('./model/appValidator');
 // For parsing application/json
 app.use(bodyParser.json());
 // Welcome route
@@ -19,7 +20,7 @@ app.get('/', function (req, res) {
     res.send(homeView());
 });
 // Add app
-app.post('/api/1/apps', function (req, res) {
+app.post('/api/1/apps', appValidator.add, function (req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const response = yield appModel.add(req.body);
@@ -31,7 +32,7 @@ app.post('/api/1/apps', function (req, res) {
     });
 });
 // Remove app
-app.delete('/api/1/apps/:id', function (req, res) {
+app.delete('/api/1/apps/:id', appValidator.remove, function (req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const response = yield appModel.remove(req.params.id);

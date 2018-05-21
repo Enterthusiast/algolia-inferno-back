@@ -5,6 +5,7 @@ const environment = require('../environment/config')
 
 import { AppInterface } from './appInterface';
 
+
 // initialize connection to algolia
 const algoliaClient = algoliasearch(environment.applicationID, environment.apiKey);
 const algoliaIndex = algoliaClient.initIndex(environment.indexName);
@@ -27,7 +28,6 @@ module.exports = {
     },
 
     remove: async (id: number) => {
-        console.log(id);
         try {
             const response: {deletedAt: Date, objectID: number, taskID: number} = await algoliaIndex.deleteObject(id)
 
