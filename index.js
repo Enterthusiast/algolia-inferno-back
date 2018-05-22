@@ -14,7 +14,7 @@ const homeView = require('./view/homeView');
 const appModel = require('./model/appModel');
 const appValidator = require('./model/appValidator');
 // For parsing application/json
-app.use(bodyParser.json());
+app.use(express.json());
 // Welcome route
 app.get('/', function (req, res) {
     res.send(homeView());
@@ -43,5 +43,6 @@ app.delete('/api/1/apps/:id', appValidator.remove, function (req, res) {
         }
     });
 });
+module.exports.app = app;
 module.exports.handler = serverless(app);
 //# sourceMappingURL=index.js.map

@@ -57,9 +57,19 @@ sls offline start
 sls deploy
 ````
 
-### Tests
+### ⚠️ Tests 
 
-Coming soon
+⚠️ Some tests are directly hitting the algolia index, the index will be mocked later.
+
+If you want to test without hitting the index, only run the appValidator.test.ts
+````
+npx mocha -g 'appValidator' --recursive     
+````
+
+You can also run all the tests. However I strongly recommand using a throwaway algolia index.
+````
+npm run test
+````
 
 ### Live version
 https://nln236v80d.execute-api.eu-west-3.amazonaws.com/dev
