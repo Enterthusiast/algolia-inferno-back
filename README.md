@@ -19,10 +19,12 @@ There's no need for a UI on top of the REST API. If you still feel like doing it
 ### Requirements
 
 To get started, you'll need the [Serverless Framework](https://serverless.com/framework/docs/providers/aws/guide/quick-start/) installed.
+
 You'll also need your environment configured with [AWS credentials](https://serverless.com/framework/docs/providers/aws/guide/credentials/).
 
-You'll also need typescript.
+Finally grab an [Algolia](https://www.algolia.com/users/sign_up) account, add an index loaded with data (./sample-data/z_data.json) and set your API credentials (./environment/config.ts - check the .sample example)to access the index.
 
+You'll also need typescript.
 ````
 npm install -g typescript
 ````
