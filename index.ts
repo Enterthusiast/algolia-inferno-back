@@ -4,6 +4,7 @@ const express = require('express')
 const app = express()
 
 const homeView = require('./view/homeView')
+const appFormView = require('./view/appFormView')
 const appModel = require('./model/appModel')
 const appValidator = require('./model/appValidator')
 
@@ -14,6 +15,8 @@ app.use(express.json())
 // Welcome route
 app.get('/', function (req, res) {
     res.send(homeView());
+    // @todo form
+    // res.send(appFormView());
 })
 
 // Add app
