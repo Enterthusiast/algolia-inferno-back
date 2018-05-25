@@ -10,10 +10,25 @@ module.exports = function () {
                     <li>
                         Add an app to Algolia index
                         <pre>POST /api/1/apps</pre>
+    <pre>
+        {
+            name: string
+            image: string
+            link: string
+            category: string
+            rank: number
+            objectID?: number
+        }
+    </pre>
                     </li>
                     <li>
                         Remove an app from Algolia index
-                        <pre>DELETE /api/1/apps/:id</pre> 
+                        <pre>DELETE /api/1/apps/:id</pre>
+    <pre>
+        {
+            id: number
+        }
+    </pre>
                 </li>
                 </ul>
                 Tips : you can use <a href="https://www.getpostman.com/">Postman</a> to test
