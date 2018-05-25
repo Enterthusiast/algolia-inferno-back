@@ -81,3 +81,8 @@ npm run test
 https://nln236v80d.execute-api.eu-west-3.amazonaws.com/dev
 
 You can use [Postman](https://www.getpostman.com/) to interact with the API.
+
+### TODO
+
+- Add Update
+- Should we prevent posting duplicated app name / link or image
