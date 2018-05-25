@@ -1,2 +1,6 @@
 node_modules
 .serverless
+
+environment/config.ts
+environment/config.js
+environment/config.js.map
