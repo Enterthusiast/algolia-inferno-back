@@ -19,8 +19,8 @@ app.use(express.json());
 // Welcome route
 app.get('/', function (req, res) {
     res.send(homeView());
-    // todo form
-    // res.send(homeView());
+    // @todo form
+    // res.send(appFormView());
 });
 // Add app
 app.post('/api/1/apps', appValidator.add, function (req, res) {
