@@ -29,6 +29,10 @@ You'll also need typescript.
 npm install -g typescript
 ````
 
+### Configure environment variable
+
+Copy `environment/config.ts.sample` and put your Algolia credentials in a new `environment/config.ts` file.
+
 ### Install packages
 
 ````
