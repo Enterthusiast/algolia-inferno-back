@@ -2,14 +2,14 @@
 
 ## Assignement
 
-Build a straightforward MVC framework able to route an HTTP query and send the response.
+Build a **straightforward** MVC framework able to route an HTTP query and send the response.
 
-The framework does not need to handle more than what is required for the app.
+The framework **does not** need to handle more than what is required for the app.
 
 The REST API needs to implement the following endpoints:
+  - `POST /api/1/apps` => Add an app (as a JSON object) to the Algolia `apps` index and return its `id`
+  - `DELETE /api/1/apps/:id` => Delete an app from the Algolia index
 
-POST /api/1/apps => Add an app (as a JSON object) to the Algolia apps index and return its id
-DELETE /api/1/apps/:id => Delete an app from the Algolia index
 You can use any technology for this.
 
 There's no need for a UI on top of the REST API. If you still feel like doing it for your own tests that's ok 👌.
@@ -29,7 +29,7 @@ You'll also need typescript.
 npm install -g typescript
 ````
 
-### Install
+### Install packages
 
 ````
 npm install
@@ -39,24 +39,24 @@ npm install
 
 Build
 ````
-tsc -p tsconfig.json
+npm run build
 ````
 
-Or watch
+Or launch a watcher to build your change live
 ````
-tsc -w -p tsconfig.json
-````
-
-### Local development
-
-````
-sls offline start
+npm run start
 ````
 
-### Deploy
+### Run local development
 
 ````
-sls deploy
+npm run dev
+````
+
+### Deploy to remote
+
+````
+npm run deploy
 ````
 
 ### ⚠️ Tests 
@@ -75,3 +75,5 @@ npm run test
 
 ### Live version
 https://nln236v80d.execute-api.eu-west-3.amazonaws.com/dev
+
+You can use [Postman](https://www.getpostman.com/) to interact with the API.

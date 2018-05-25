@@ -7,6 +7,10 @@
     "test": "test"
   },
   "scripts": {
+    "start": "tsc -w -p tsconfig.json",
+    "dev": "sls offline start",
+    "build": "tsc -p tsconfig.json",
+    "deploy": "npm run build && sls deploy",
     "test": "mocha --recursive"
   },
   "repository": {
