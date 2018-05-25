@@ -4,3 +4,5 @@ node_modules
 environment/config.ts
 environment/config.js
 environment/config.js.map
+
+.DS_Store
